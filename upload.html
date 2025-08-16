@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="c.png" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="upload.css" />
+    <title>AI Bot</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+          Octa <span>Learn</span>
+        </div>
+        <div class="links">
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
+          >
+            <a href="index.html">Home</a>
+          </div>
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="300"
+          >
+            <a href="converter.html">Pdf Converter</a>
+          </div>
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a href="G.html">Game</a>
+          </div>
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a href="https://www.instagram.com/octa_learn/profilecard/">Social</a>
+          </div>
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="500"
+          >
+            <a href="mailto:adec14530@gmail.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      <div class="dropdown">
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="converter.html">Pdf Converter</a>
+          <a href="G.html">Game</a>
+          <a href="https://www.instagram.com/octa_learn/profilecard/">Social</a>
+          <a href="mailto:adec14530@gmail.com">Contact</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Notes Upload Widget -->
+    <div
+      class="notes-upload-widget"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-delay="600"
+    >
+      <h2>Upload Your Notes</h2>
+      <label class="btn btn-primary">
+        <i class="fa fa-file"></i> Choose File<input
+          type="file"
+          class="file"
+          name="file"
+          accept=".txt,.pdf,.doc,.docx,.pptx,.xlsx"
+        />
+      </label>
+      <p>Maximum File Size: 20MB</p>
+      <button type="submit">Upload</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@16.0.2"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+    <script src="upload.js"></script>
+  </body>
+</html>
