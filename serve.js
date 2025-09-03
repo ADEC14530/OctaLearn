@@ -1,5 +1,5 @@
 const CACHE_NAME = "octalearn-cache-v2";
-const FALLBACK_URL = "fallback.html";
+const FALLBACK_URL = "fall.html";
 
 // Add important files to cache during install
 const urlsToCache = [
@@ -9,7 +9,7 @@ const urlsToCache = [
   "/G.html",
   "/O.css",
   "/O.js",
-  "/fallback.html"
+  "/fall.html"
 ];
 
 self.addEventListener("install", event => {
