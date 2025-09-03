@@ -64,24 +64,3 @@ function cancel() {
   document.querySelector('.dropdown').classList.remove('active');
 }
 
-// Octopus preloader control
-window.addEventListener('load', () => {
-  // Optional: ensure preloader shows for a minimum time
-  const MIN_SHOW = 600; // ms
-  const start = performance.timing ? performance.timing.responseStart : Date.now();
-
-  const hide = () => {
-    const pre = document.getElementById('preloader');
-    if (pre) pre.classList.add('hide');
-  };
-
-  const elapsed = Date.now() - start;
-  if (elapsed >= MIN_SHOW) {
-    hide();
-  } else {
-    setTimeout(hide, MIN_SHOW - elapsed);
-  }
-});
-
-// If you use AOS, initialize after load as you already do
-
