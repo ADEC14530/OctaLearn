@@ -22,8 +22,8 @@ self.addEventListener("install", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     fetch(event.request).catch(() => caches.match(event.request).then(response => {
-      // If not cached, show fallback page
-      return response || caches.match(FALLBACK_URL);
+      // If not cached, show fall page
+      return response || caches.match(FALL_URL);
     }))
   );
 });
