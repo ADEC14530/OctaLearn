@@ -10,6 +10,48 @@
     <title>Octalearn</title>
 </head>
 <body>
+
+    <!-- Preloader -->
+<div id="preloader" aria-live="polite" aria-busy="true">
+  <div class="octa-wrap" role="img" aria-label="Page loading">
+    <!-- Inline SVG Octopus -->
+    <svg class="octopus" width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+      <!-- Body -->
+      <defs>
+        <radialGradient id="octaGrad" cx="50%" cy="35%" r="70%">
+          <stop offset="0%" stop-color="#6aa2ff"/>
+          <stop offset="100%" stop-color="#0000ff"/>
+        </radialGradient>
+      </defs>
+      <g class="float">
+        <ellipse cx="90" cy="70" rx="45" ry="38" fill="url(#octaGrad)"/>
+        <!-- Eyes -->
+        <g class="eyes">
+          <circle cx="75" cy="65" r="8" fill="#fff"/>
+          <circle cx="105" cy="65" r="8" fill="#fff"/>
+          <circle class="pupil" cx="77" cy="66" r="3" fill="#24305e"/>
+          <circle class="pupil" cx="107" cy="66" r="3" fill="#24305e"/>
+          <rect class="blink" x="67" y="58" width="16" height="14" fill="#eae7db" opacity="0"/>
+          <rect class="blink" x="97" y="58" width="16" height="14" fill="#eae7db" opacity="0"/>
+        </g>
+        <!-- Tentacles (8) -->
+        <g class="tents">
+          <path class="tent" d="M60 95 C45 110, 40 125, 55 135" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M70 95 C55 115, 55 135, 70 145" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M80 95 C70 118, 75 138, 88 148" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M90 95 C85 118, 92 138, 102 148" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M100 95 C100 118, 110 138, 120 146" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M110 95 C120 115, 128 132, 138 140" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M75 95 C60 105, 55 115, 50 123" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="tent" d="M105 95 C120 105, 130 115, 135 123" stroke="#0000ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </g>
+      </g>
+    </svg>
+    <div class="loading-text">Loading OctaLearn…</div>
+  </div>
+</div>
+
+    
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
@@ -58,4 +100,5 @@
     <script src="O.js"></script>
 </body>
 </html>
+
 
