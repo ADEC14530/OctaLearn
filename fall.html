@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oops! Something went wrong</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f6fc;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #24305e;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+    }
+    .octopus {
+      font-size: 5rem;
+      animation: float 2s infinite ease-in-out;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    a, button {
+      padding: 10px 20px;
+      background: #0000FF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 5px;
+    }
+    a:hover, button:hover {
+      background: transparent;
+      border: 2px solid #0000FF;
+      color: #0000FF;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="octopus">🐙</div>
+    <h1>Oops! Page Not Found or Offline</h1>
+    <p>Looks like you’re either lost in the deep sea 🌊 or offline.<br>
+       Don’t worry, Octo will guide you back!</p>
+
+    
+    <button onclick="retry()">🔄 Retry</button>
+  </div>
+
+  <script>
+    function retry() {
+      if (navigator.onLine) {
+        location.reload(); // reload page if internet is back
+      } else {
+        alert("Still offline! Please check your connection 🛜");
+      }
+    }
+
+    // Auto-retry when internet comes back
+    window.addEventListener("online", () => {
+      location.reload();
+    });
+  </script>
+</body>
+</html>
