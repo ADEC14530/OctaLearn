@@ -259,52 +259,43 @@ section {
   }
 }
 
-/* Mobile dropdown container */
-.mobile-dropdown {
-    display: flex;
-    flex-direction: column;
+
+/* Desktop dropdown */
+.dropdown-container {
+  position: relative;
+}
+.dropdown-container .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 100;
+  flex-direction: column;
+}
+.dropdown-container:hover .dropdown-content {
+  display: flex;
+}
+.dropdown-container .dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: #24305e;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0; /* for AOS animation */
 }
 
-/* Mobile dropdown button */
-.mobile-dropbtn {
-    background: transparent;
-    border: none;
-    color: white;
-    font-weight: 600;
-    padding: 8px 0;
-    font-size: 1.1rem;
-    text-align: left;
-    cursor: pointer;
+/* Mobile dropdown */
+.mobile-dropdown .mobile-dropdown-content {
+  display: none;
+  flex-direction: column;
+  padding-left: 10px;
 }
-
-/* Mobile dropdown content */
-.mobile-dropdown-content {
-    display: none;
-    flex-direction: column;
-    margin-left: 10px; /* indent links for clarity */
+.mobile-dropdown .mobile-dropdown-content.show {
+  display: flex;
 }
-
-.mobile-dropdown-content a {
-    color: white;
-    padding: 6px 0;
-    text-decoration: none;
-    font-size: 0.95rem;
+.mobile-dropdown a {
+  display: block;
+  padding: 10px 0;
 }
-
-/* Show on click */
-.mobile-dropdown.active .mobile-dropdown-content {
-    display: flex;
-}
-
-/* Optional hover effect for links */
-.mobile-dropdown-content a:hover {
-    color: #0000FF;
-}
-
-
-
-
-
-
-
-
