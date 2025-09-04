@@ -192,7 +192,7 @@ section {
   display: flex;               /* Center content */
   align-items: center;         /* Vertical center */
   justify-content: center;     /* Horizontal center */
-  background-color: #fff;      /* Optional: adds a clean background */
+  background-color: transparent;      /* Optional: adds a clean background */
 }
 
 .main-container .image img {
@@ -258,6 +258,7 @@ section {
     margin-top: 10px;
   }
 }
+
 
 
 
