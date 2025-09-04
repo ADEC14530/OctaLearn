@@ -1,40 +1,54 @@
-const CACHE_NAME = "octalearn-cache-v2";
-const FALLBACK_URL = "fall.html";
+  // sw.js
+const CACHE_NAME = "octalearn-v1";
 
-// Add important files to cache during install
 const urlsToCache = [
-  "/",              // homepage
+  "/",
   "/index.html",
-  "/converter.html", 
+  "/converter.html",
   "/G.html",
+  "/upload.html",
+  "/fall.html",
   "/O.css",
-  "/O.js",
-  "/fall.html"
+  "/O.js"
 ];
 
-self.addEventListener("install", event => {
+// Install and cache files
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
+    })
   );
 });
 
-// Serve requests
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request).then(response => {
-      // If not cached, show fall page
-      return response || caches.match(FALL_URL);
-    }))
-  );
-});
-
-// Update cache if new version
-self.addEventListener("activate", event => {
+// Activate and clean old caches
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+    caches.keys().then((names) =>
+      Promise.all(
+        names.map((name) => {
+          if (name !== CACHE_NAME) {
+            return caches.delete(name);
+          }
+        })
+      )
     )
   );
 });
+
+// Fetch event
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    fetch(event.request).catch(() => {
+      // If it's a navigation request, show fallback
+      if (event.request.mode === "navigate") {
+        return caches.match("/fall.html");
+      }
+      // Otherwise try cache
+      return caches.match(event.request);
+    })
+  );
+});
+
 
 
