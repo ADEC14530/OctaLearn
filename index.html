@@ -126,43 +126,67 @@
 
 
     
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                Octa <span>Learn</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="converter.html">Pdf Converter</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="G.html">Game</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="https://www.instagram.com/octa_learn/profilecard/">Social</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="mailto:adec14530@gmail.com">Contact</a></div>
-            </div>
-        </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        <div class="dropdown">
-    <div class="links">
-        <a href="index.html">Home</a>
-
-        <!-- Tools dropdown mobile -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropbtn">Tools ▼</button>
-            <div class="mobile-dropdown-content">
-                <a href="cv-builder.html">CV Builder</a>
-                <a href="pomodoro.html">Pomodoro Timer</a>
-                <a href="code-playground.html">Code Playground</a>
-                <a href="plagiarism.html">Plagiarism Checker</a>
-            </div>
-        </div>
-
-        <a href="converter.html">Pdf Converter</a>
-        <a href="G.html">Game</a>
-        <a href="https://www.instagram.com/octa_learn/profilecard/">Social</a>
-        <a href="">Download app</a>
-        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+      Octa <span>Learn</span>
     </div>
-</div>
-    </nav>
+    <div class="links">
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#">Home</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="converter.html">Pdf Converter</a></div>
+
+      <!-- Tools dropdown -->
+      <div class="link dropdown-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <a href="#" class="dropbtn">Tools <i class="fa-solid fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="cv-builder.html">CV Builder</a>
+          <a href="pomodoro.html">Pomodoro Timer</a>
+          <a href="code-playground.html">Code Playground</a>
+          <a href="plagiarism.html">Plagiarism Checker</a>
+        </div>
+      </div>
+
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="G.html">Game</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="https://www.instagram.com/octa_learn/profilecard/">Social</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600"><a href="mailto:adec14530@gmail.com">Contact</a></div>
+    </div>
+  </div>
+
+  <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+
+  <!-- Mobile dropdown -->
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="converter.html">Pdf Converter</a>
+
+      <!-- Mobile Tools dropdown -->
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropbtn" onclick="toggleMobileDropdown(event)">Tools <i class="fa-solid fa-caret-down"></i></a>
+        <div class="mobile-dropdown-content">
+          <a href="cv-builder.html">CV Builder</a>
+          <a href="pomodoro.html">Pomodoro Timer</a>
+          <a href="code-playground.html">Code Playground</a>
+          <a href="plagiarism.html">Plagiarism Checker</a>
+        </div>
+      </div>
+
+      <a href="G.html">Game</a>
+      <a href="https://www.instagram.com/octa_learn/profilecard/">Social</a>
+      <a href="mailto:adec14530@gmail.com">Contact</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile dropdown toggle script -->
+<script>
+  function toggleMobileDropdown(event) {
+    event.preventDefault();
+    const content = event.currentTarget.nextElementSibling;
+    content.classList.toggle("show");
+  }
+</script>
     <section>
         <div class="main-container">
             <div class="content">
@@ -195,6 +219,7 @@
     
 </body>
 </html>
+
 
 
 
