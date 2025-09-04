@@ -64,3 +64,14 @@ function cancel() {
   document.querySelector('.dropdown').classList.remove('active');
 }
 
+// Mobile dropdown toggle
+document.querySelectorAll('.mobile-dropbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parent = btn.parentElement;
+        parent.classList.toggle('active');
+    });
+});
+
+
+
+
