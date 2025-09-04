@@ -259,6 +259,50 @@ section {
   }
 }
 
+/* Mobile dropdown container */
+.mobile-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile dropdown button */
+.mobile-dropbtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px 0;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Mobile dropdown content */
+.mobile-dropdown-content {
+    display: none;
+    flex-direction: column;
+    margin-left: 10px; /* indent links for clarity */
+}
+
+.mobile-dropdown-content a {
+    color: white;
+    padding: 6px 0;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Show on click */
+.mobile-dropdown.active .mobile-dropdown-content {
+    display: flex;
+}
+
+/* Optional hover effect for links */
+.mobile-dropdown-content a:hover {
+    color: #0000FF;
+}
+
+
+
 
 
 
