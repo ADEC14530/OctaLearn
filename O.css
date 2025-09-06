@@ -299,3 +299,36 @@ section {
   display: block;
   padding: 10px 0;
 }
+
+
+/* Hamburger lines */
+.nav__toggle {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.nav__toggle span {
+  height: 3px;
+  width: 100%;
+  background: #000; /* change color if needed */
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* When active -> show X */
+.nav__toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__toggle.open span:nth-child(2) {
+  opacity: 0; /* hide middle line */
+}
+
+.nav__toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
