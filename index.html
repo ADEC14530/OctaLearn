@@ -1,232 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="c.png">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="O.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/x-icon" href="d1.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Octalearn</title>
-</head>
-<body>
 
-      <!-- Preloader -->
-<div id="preloader" aria-live="polite" aria-busy="true">
-  <div class="loader-wrap" role="img" aria-label="Page loading">
-    <!-- Circle Loader -->
-    <div class="circle-loader"></div>
-    <div class="loading-text">Loading OctaLearn…</div>
-  </div>
-</div>
+    <!----------------- Css ----------------->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
 
-<!-- Preloader Styles -->
-<style>
-  /* Preloader container */
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #eae7db;
-    display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
-    z-index: 2000;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-  }
-
-  /* Fade-out effect */
-  #preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  /* Wrapper */
-  .loader-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* Circle Loader */
-  .circle-loader {
-    border: 6px solid #ccc;
-    border-top: 6px solid #0000ff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 20px;
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  /* Loading text with wave color animation */
-  .loading-text {
-    font-size: 1.3rem;
-    font-weight: bold;
-    background: linear-gradient(270deg, #24305e, #0000ff, #6aa2ff, #24305e);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: waveColors 3s ease infinite;
-  }
-
-  @keyframes waveColors {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* 📱 Small screens (phones) */
-  @media (max-width: 600px) {
-    .circle-loader {
-      width: 40px;
-      height: 40px;
-      border-width: 4px;
-    }
-    .loading-text {
-      font-size: 1rem;
-    }
-  }
-
-  /* 💻 Large screens (desktop) */
-  @media (min-width: 1200px) {
-    .circle-loader {
-      width: 80px;
-      height: 80px;
-      border-width: 8px;
-    }
-    .loading-text {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
-<!-- Preloader Script -->
-<script>
-  window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-    preloader.classList.add("fade-out");
-
-    // Completely remove from DOM after fade
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 800);
-  });
-</script>
-
-
-
-
-    
-<nav>
-  <div class="nav-container">
-    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-      Octa <span>Learn</span>
-    </div>
-    <div class="links">
-      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#">Home</a></div>
       
+      
+    <!----------------- Header ----------------->
+  <header class="header container">
+  <nav class="nav" role="navigation">
+  <div class="nav__header">
+    <a href="index.html" class="nav__logo">About App</a>
 
-      <!-- Tools dropdown -->
-      <div class="link dropdown-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-        <a href="#" class="dropbtn">Tools <i class="fa-solid fa-caret-down"></i></a>
-        <div class="dropdown-content">
-          <a href="cv.html">CV Builder</a>
-          <a href="pomo.html">Pomodoro Timer</a>
-          <a href="converter.html">Image to Pdf</a>
-            <a href="G.html">Game</a>
-        
-        
-        </div>
-      </div>
-
-    
-      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="https://www.instagram.com/octa_learn/profilecard/">Social</a></div>
-      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600"><a href="">Download App</a></div>
-    </div>
-  </div>
-
-  <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-
-  <!-- Mobile dropdown -->
-  <div class="dropdown">
-    <div class="links">
-      <a href="index.html">Home</a>
-
-      <!-- Mobile Tools dropdown -->
-      <div class="mobile-dropdown">
-        <a href="#" class="mobile-dropbtn" onclick="toggleMobileDropdown(event)">Tools <i class="fa-solid fa-caret-down"></i></a>
-        <div class="mobile-dropdown-content">
-          <a href="cv.html">CV Builder</a>
-          <a href="pomo.html">Pomodoro Timer</a>
-          <a href="converter.html">Image to Pdf</a>
-        </div>
-      </div>
-
-      <a href="G.html">Game</a>
-      <a href="https://www.instagram.com/octa_learn/profilecard/">Social</a>
-      <a href="">Download App</a>
-      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-    </div>
+    <!-- Hamburger Toggle Button (mobile) -->
+   
   </div>
 </nav>
 
-<!-- Mobile dropdown toggle script -->
-<script>
-  function toggleMobileDropdown(event) {
-    event.preventDefault();
-    const content = event.currentTarget.nextElementSibling;
-    content.classList.toggle("show");
-  }
-</script>
-    <section>
-        <div class="main-container">
-            <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Start Learning <span>Smarter</span></h1>
-                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" class="typewriter">Let us <span class="typewriter-text"></span><label for="">|</label></div>
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">OctaLearn is your ultimate online learning companion, designed to make studying smarter, fun, and more effective. Whether you're a student, a professional, or a lifelong learner, OctaLearn equips you with powerful tools and engaging activities to enhance your learning experience.</p>
-                
-                <div class="btn" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1800">
-                    <a href="upload.html"><button>Chat with Notes</button></a>
-                </div>
-            </div>
-            <div class="image" data-aos="zoom-in" data-aos-duration="3000">
-                <img src="H1.png" alt="">
-            </div>
-        </div>
-    </section>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({offset:0,});
-    </script>
-    <script src="O.js"></script>
+</header>
 
-    <script>
+
+
+      <div class="home padd-80">
+        <div class="home__container grid">
+          <div class="home__data">
+            
+            <h1 class="home__title">
+             Start Learning Smarter
+            </h1>
+            <p class="description">
+              Octalearn equips you with powerful tools and engaging activities to enhance your learning experience. 
+            </p>
+
+            <div class="home__buttons">
+              <a href="https://www.instagram.com/octa_learn/profilecard/" class="button">Join Us</a>
+              
+            </div>
+          </div>
+
+          <img src="im1.png" alt="" class="home__img" />
+        </div>
+      </div>
+    </header>
+
+    
+
+
+           
+
+      <!----------------- Feature1 ----------------->
+      <section class="feature padd-50 container">
+        <div class="feature__container grid">
+          <img src="im2.png" alt="" class="feature__img" />
+
+          <div class="feature__data">
+            <h2 class="section__title" >
+             Octa
+            </h2>
+
+            <p class="description">
+             Have Octa, your accountability partner to hold you accountable ensure you stick to your schedule when you commit to a study session or goal.
+            </p>
+            
+          </div>
+        </div>
+      </section>
+
+      <!----------------- Feature2 ----------------->
+      <section class="feature2 padd-50 container">
+        <div class="feature2__container grid">
+          <div class="feature2__data">
+            <h2 class="section__title" >
+              Quiz & Scheduler
+            </h2>
+
+            <p class="description">
+              Create a structured reading schedule fully integrated with quizes and flashcard, both of which you can also make yourself.
+            </p>
+            <a href="" class="button">Download App</a>
+          </div>
+
+          <img src="im3.png" alt="" class="feature2__img" />
+        </div>
+      </section>
+
+      <!----------------- Cta ----------------->
+      <section class="cta padd-100">
+        <div class="cta__container container grid">
+          <img src="im4.png" alt="" class="cta__img" />
+
+          <div class="cta__data">
+            <h2 class="section__title" >
+              Ai Chatbot 
+            </h2>
+
+            <p class="cta__description description">
+              Chat with Octa to help you summarize and better understand your note, do your assignment or project and have a more fun learning experience.
+            </p>
+
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+
+    <!----------------- Js ----------------->
+    <script src="index.js"></script>
+
+<script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/serve.js")
       .then(() => console.log("✅ Service Worker Registered"))
       .catch(err => console.log("❌ Service Worker Failed:", err));
   }
     </script>
-    
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
