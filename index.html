@@ -594,3 +594,153 @@
     });
 
     /* Mobile menu
+
+    /* Mobile menu */
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const mobileToolsToggle = document.getElementById('mobileToolsToggle');
+    const mobileTools = document.getElementById('mobileTools');
+
+    function openMobile(){
+      mobilePanel.classList.add('show');
+      hamburger.setAttribute('aria-expanded','true');
+      mobilePanel.setAttribute('aria-hidden','false');
+    }
+    function closeMobile(){
+      mobilePanel.classList.remove('show');
+      hamburger.setAttribute('aria-expanded','false');
+      mobilePanel.setAttribute('aria-hidden','true');
+    }
+
+    hamburger.addEventListener('click', function(e){
+      e.stopPropagation();
+      const isOpen = mobilePanel.classList.contains('show');
+      if(isOpen) closeMobile();
+      else openMobile();
+    });
+
+    // close mobile on outside click
+    mobilePanel.addEventListener('click', function(e){
+      if(e.target === mobilePanel) closeMobile();
+    });
+
+    mobileToolsToggle && mobileToolsToggle.addEventListener('click', function(){
+      const open = mobileTools.style.display === 'flex';
+      mobileTools.style.display = open ? 'none' : 'flex';
+      mobileToolsToggle.setAttribute('aria-expanded', String(!open));
+    });
+
+    /* Simple signup handler */
+    function handleSignup(e){
+      e.preventDefault();
+      const email = (document.getElementById('email').value || '').trim();
+      const msg = document.getElementById('formMessage');
+      if(email){
+        msg.textContent = '✅ Thanks — we will notify ' + email;
+      } else {
+        msg.textContent = '✅ Thanks — you will be notified when we launch.';
+      }
+      document.getElementById('signupForm').reset();
+      setTimeout(()=> msg.textContent = '', 6000);
+      return false;
+    }
+
+    /* Scroll helper */
+    function scrollToSignup(){
+      document.getElementById('signup').scrollIntoView({behavior:'smooth'});
+    }
+
+    /* Cookie banner logic - simple localStorage consent */
+    (function(){
+      const key = 'octalearn_cookie_consent';
+      const banner = document.getElementById('cookie-banner');
+      const accepted = localStorage.getItem(key);
+      if(!accepted){
+        banner.style.display = 'flex';
+      }
+      const btnAccept = document.getElementById('accept-cookies');
+      const btnManage = document.getElementById('manage-cookies');
+
+      btnAccept && btnAccept.addEventListener('click', ()=>{
+        localStorage.setItem(key,'accepted');
+        banner.style.display = 'none';
+      });
+      btnManage && btnManage.addEventListener('click', ()=>{
+        const current = localStorage.getItem(key);
+        if(current === 'accepted'){
+          localStorage.setItem(key,'declined');
+          alert('Cookies declined. Some features (AI summaries) may not work.');
+        } else {
+          localStorage.setItem(key,'accepted');
+          alert('Cookies accepted. AI features enabled.');
+        }
+        banner.style.display = 'none';
+      });
+    })();
+
+    /* Accessibility: close mobile or dropdown on escape globally */
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        closeMobile();
+        closeToolsDropdown();
+      }
+    });
+
+    /* Ensure dropdown closes when screen resizes beyond mobile */
+    window.addEventListener('resize', ()=> {
+      if(window.innerWidth > 720){
+        // Ensure mobile panel is closed
+        closeMobile();
+        // Mobile tools hidden
+        if(mobileTools) mobileTools.style.display = 'none';
+      } else {
+        // close desktop dropdown on small screens (we use mobile tools)
+        closeToolsDropdown();
+      }
+    });
+  </script>
+  
+  <script>
+  // Replace this after deployment with your actual Web App URL:
+  const WEB_APP_URL = "YOUR_WEB_APP_URL_HERE";
+
+  function handleSignup(event) {
+    event.preventDefault();
+
+    const emailInput = document.getElementById("email");
+    const message = document.getElementById("formMessage");
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      message.textContent = "Please enter an email.";
+      return;
+    }
+
+    fetch(WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors", // Required for Google Apps Script
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email })
+    })
+    .then(() => {
+      message.textContent = "✅ You’ll be notified!";
+      emailInput.value = "";
+    })
+    .catch(() => {
+      message.textContent = "❌ Something went wrong. Try again later.";
+    });
+  }
+</script>
+  
+  
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serve.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.log("❌ Service Worker Failed:", err));
+  }
+    </script>
+
+</body>
+</html>
+
