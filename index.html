@@ -2,321 +2,276 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="icon" type="image/x-icon" href="d1.PNG">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Octalearn</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OCTALEARN – Learn Smarter</title>
+  <link rel="icon" href="d1.PNG">
+
   <style>
-    /* ---------- Reset & Base ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    body {
-      line-height: 1.6;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-    }
-    img {
-      max-width: 100%;
-      display: block;
+    /* ===== RESET ===== */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
     }
 
-    /* ---------- Container ---------- */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+    body{
+      background:#eae7db;
+      color:#333;
+      line-height:1.6;
     }
 
-    /* ---------- Header / Nav ---------- */
-    .header {
-      background: #f5f5f5;
-      padding: 20px 0;
-    }
-    .nav__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav__logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav__logo img.logo {
-      width: 40px;
-      height: 40px;
-    }
-    .nav__links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .nav__links li {
-      position: relative;
-    }
-    .nav__links a {
-      padding: 5px 0;
-      transition: color 0.3s;
-    }
-    .nav__links a:hover {
-      color: #007bff;
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    ul{list-style:none;}
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
     }
 
-    /* Dropdown Menu */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 10px 0;
-      min-width: 150px;
-      z-index: 100;
-    }
-    .dropdown-menu li {
-      padding: 5px 20px;
-    }
-    .dropdown-menu li a:hover {
-      color: #007bff;
-    }
-    .dropdown:hover .dropdown-menu {
-      display: block;
+    /* ===== NAV ===== */
+    header{
+      background:#eae7db;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid rgba(0,0,0,.1);
     }
 
-    /* Hamburger (mobile) */
-    .nav__toggle {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
     }
 
-    /* ---------- Hero Section ---------- */
-    .home {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 0;
-      flex-wrap: wrap;
-    }
-    .home__data {
-      flex: 1 1 500px;
-      padding-right: 20px;
-    }
-    .home__title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .description {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-    .home__buttons .button {
-      display: inline-block;
-      padding: 10px 25px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .home__buttons .button:hover {
-      background: #0056b3;
-    }
-    .home__img {
-      flex: 1 1 400px;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:1.4rem;
+      font-weight:bold;
     }
 
-    /* ---------- Features ---------- */
-    .feature, .feature2, .cta {
-      padding: 50px 0;
-    }
-    .feature__container, .feature2__container, .cta__container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .feature__data, .feature2__data, .cta__data {
-      flex: 1 1 400px;
-    }
-    .section__title {
-      font-size: 2rem;
-      margin-bottom: 15px;
+    .logo img{
+      width:38px;
     }
 
-    /* ---------- Footer ---------- */
-    .footer {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .footer__links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 5px;
-    }
-    .footer__links a {
-      color: #fff;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-    .footer__links a:hover {
-      color: #007bff;
+    .nav-links{
+      display:flex;
+      gap:25px;
+      align-items:center;
     }
 
-    /* ---------- Responsive ---------- */
-    @media (max-width: 900px) {
-      .home {
-        flex-direction: column;
-        text-align: center;
+    .nav-links a:hover{
+      color:#007bff;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:1.8rem;
+      background:none;
+      border:none;
+      cursor:pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      padding:80px 0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:40px;
+    }
+
+    .hero h1{
+      font-size:2.8rem;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#007bff;
+      color:#fff;
+      padding:12px 28px;
+      border-radius:6px;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#0056b3;
+    }
+
+    /* ===== SECTIONS ===== */
+    section{
+      padding:70px 0;
+    }
+
+    .section-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    h2{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      padding:20px 0;
+      text-align:center;
+      border-top:1px solid rgba(0,0,0,.1);
+      font-size:.9rem;
+    }
+
+    footer a{
+      margin:0 10px;
+    }
+
+    footer a:hover{
+      color:#007bff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      .hero,
+      .section-grid{
+        grid-template-columns:1fr;
+        text-align:center;
       }
-      .home__data {
-        padding-right: 0;
+    }
+
+    @media(max-width:700px){
+      .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#eae7db;
+        flex-direction:column;
+        gap:15px;
+        padding:20px 0;
+        display:none;
       }
-      .feature__container, .feature2__container, .cta__container {
-        flex-direction: column-reverse;
-        text-align: center;
+
+      .nav-links.active{
+        display:flex;
       }
-      .nav__links {
-        flex-direction: column;
-        display: none;
-        gap: 10px;
-      }
-      .nav__links.nav__links--active {
-        display: flex;
-      }
-      .nav__toggle {
-        display: block;
+
+      .menu-btn{
+        display:block;
       }
     }
   </style>
 </head>
 <body>
 
-  <!----------------- Header / Nav + Hero ----------------->
-  <header class="header container">
-    <nav class="nav" role="navigation">
-      <div class="nav__header">
-        <a href="index.html" class="nav__logo">
-          <img src="c.png" alt="Octalearn Logo" class="logo" /> OCTALEARN
-        </a>
-        <button class="nav__toggle" aria-label="toggle navigation">&#9776;</button>
-      </div>
-
-      <ul class="nav__links">
-        <li><a href="#home">Home</a></li>
-        <li class="dropdown">
-          <a href="#">Tools ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="G.html">Typing Game</a></li>
-            <li><a href="converter.html">Image to PDF</a></li>
-          </ul>
-        </li>
-        <li><a href="#download">Download App</a></li>
-        <li><a href="#socials">Socials</a></li>
-      </ul>
-    </nav>
-
-    <div class="home padd-80" id="home">
-      <div class="home__container grid">
-        <div class="home__data">
-          <h1 class="home__title">Start Learning Smarter</h1>
-          <p class="description">
-            Octalearn equips you with powerful tools and engaging activities to enhance your learning experience.
-          </p>
-          <div class="home__buttons">
-            <a href="https://www.instagram.com/octa_learn/profilecard/" class="button">Join Us</a>
-          </div>
-        </div>
-        <img src="im1.png" alt="Hero Image" class="home__img" />
-      </div>
+<!-- ===== NAV ===== -->
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="c.png" alt="logo">
+      OCTALEARN
     </div>
-  </header>
 
-  <!----------------- Feature Sections ----------------->
-  <section class="feature padd-50 container">
-    <div class="feature__container grid">
-      <img src="im2.png" alt="" class="feature__img" />
-      <div class="feature__data">
-        <h2 class="section__title">Octa</h2>
-        <p class="description">
-          Have Octa, your accountability partner to hold you accountable ensure you stick to your schedule when you commit to a study session or goal.
-        </p>
-      </div>
+    <button class="menu-btn">☰</button>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="G.html">Typing Game</a></li>
+      <li><a href="converter.html">Image to PDF</a></li>
+      <li><a href="#">Download App</a></li>
+      <li><a href="#">Socials</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero container">
+  <div>
+    <h1>Start Learning Smarter</h1>
+    <p>
+      Octalearn equips you with powerful tools and engaging activities
+      to enhance your learning experience.
+    </p>
+    <a href="https://www.instagram.com/octa_learn/profilecard/" class="btn">
+      Join Us
+    </a>
+  </div>
+
+  <img src="im1.png" alt="Hero Image">
+</section>
+
+<!-- ===== FEATURE 1 ===== -->
+<section>
+  <div class="container section-grid">
+    <img src="im2.png" alt="">
+    <div>
+      <h2>Octa</h2>
+      <p>
+        Meet Octa, your accountability partner that helps you stay committed
+        to your study sessions and goals.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="feature2 padd-50 container">
-    <div class="feature2__container grid">
-      <div class="feature2__data">
-        <h2 class="section__title">Quiz & Scheduler</h2>
-        <p class="description">
-          Create a structured reading schedule fully integrated with quizes and flashcard, both of which you can also make yourself.
-        </p>
-        <a href="" class="button">Download App</a>
-      </div>
-      <img src="im3.png" alt="" class="feature2__img" />
+<!-- ===== FEATURE 2 ===== -->
+<section>
+  <div class="container section-grid">
+    <div>
+      <h2>Quiz & Scheduler</h2>
+      <p>
+        Create structured reading schedules with quizzes and flashcards
+        fully integrated.
+      </p>
+      <a href="#" class="btn">Download App</a>
     </div>
-  </section>
+    <img src="im3.png" alt="">
+  </div>
+</section>
 
-  <section class="cta padd-100">
-    <div class="cta__container container grid">
-      <img src="im4.png" alt="" class="cta__img" />
-      <div class="cta__data">
-        <h2 class="section__title">AI Chatbot</h2>
-        <p class="cta__description description">
-          Chat with Octa to help you summarize and better understand your note, do your assignment or project and have a more fun learning experience.
-        </p>
-      </div>
+<!-- ===== FEATURE 3 ===== -->
+<section>
+  <div class="container section-grid">
+    <img src="im4.png" alt="">
+    <div>
+      <h2>AI Chatbot</h2>
+      <p>
+        Chat with Octa to summarize notes, complete assignments,
+        and enjoy a smarter learning experience.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!----------------- Footer ----------------->
-  <footer class="footer container">
-    <div class="footer__content">
-      <p>© 2025 OCTALEARN</p>
-      <ul class="footer__links">
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-      </ul>
-    </div>
-  </footer>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 OCTALEARN</p>
+  <p>
+    <a href="terms.html">Terms</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
 
-  <!----------------- JS ----------------->
-  <script>
-    // Service Worker
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/serve.js")
-        .then(() => console.log("✅ Service Worker Registered"))
-        .catch(err => console.log("❌ Service Worker Failed:", err));
-    }
+<script>
+  const btn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".nav-links");
 
-    // Mobile menu toggle
-    const toggle = document.querySelector(".nav__toggle");
-    const navLinks = document.querySelector(".nav__links");
-
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("nav__links--active");
-    });
-  </script>
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
 
 </body>
-        </html>
+</html>
