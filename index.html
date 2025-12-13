@@ -6,212 +6,76 @@
   <link rel="icon" type="image/x-icon" href="d1.PNG">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Octalearn</title>
-  
+
   <style>
     /* ---------- Reset & Base ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    body {
-      line-height: 1.6;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
+    body { background-color:#eae7db; color:#333; line-height:1.6;}
+    a { text-decoration:none; color:inherit;}
+    ul { list-style:none;}
+    img { max-width:100%; display:block;}
 
-    /* ---------- Container ---------- */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+    .container { width:90%; max-width:1200px; margin:auto;}
 
     /* ---------- Header / Nav ---------- */
-    .header {
-      background: #f5f5f5;
-      padding: 20px 0;
-    }
-    .nav__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav__logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav__logo img.logo {
-      width: 40px;
-      height: 40px;
-    }
-    .nav__links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .nav__links li {
-      position: relative;
-    }
-    .nav__links a {
-      padding: 5px 0;
-      transition: color 0.3s;
-    }
-    .nav__links a:hover {
-      color: #007bff;
-    }
+    .header { background:#fff; padding:15px 0; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;}
+    .nav__header { display:flex; justify-content:space-between; align-items:center;}
+    .nav__logo { font-size:1.5rem; font-weight:bold; display:flex; align-items:center; gap:10px;}
+    .nav__logo img.logo { width:40px; height:40px;}
+    .nav__links { display:flex; gap:20px; align-items:center;}
+    .nav__links li { position:relative;}
+    .nav__links a { padding:5px 0; transition:color 0.3s;}
+    .nav__links a:hover { color:#007bff;}
+    
+    .dropdown-menu { display:none; position:absolute; top:100%; left:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); padding:10px 0; min-width:150px; z-index:100;}
+    .dropdown-menu li { padding:5px 20px;}
+    .dropdown:hover .dropdown-menu { display:block;}
 
-    /* Dropdown Menu */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 10px 0;
-      min-width: 150px;
-      z-index: 100;
-    }
-    .dropdown-menu li {
-      padding: 5px 20px;
-    }
-    .dropdown-menu li a:hover {
-      color: #007bff;
-    }
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* Hamburger (mobile) */
-    .nav__toggle {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+    .nav__toggle { display:none; font-size:2rem; background:none; border:none; cursor:pointer;}
 
     /* ---------- Hero Section ---------- */
-    .home {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 0;
-      flex-wrap: wrap;
-    }
-    .home__data {
-      flex: 1 1 500px;
-      padding-right: 20px;
-    }
-    .home__title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .description {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-    .home__buttons .button {
-      display: inline-block;
-      padding: 10px 25px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .home__buttons .button:hover {
-      background: #0056b3;
-    }
-    .home__img {
-      flex: 1 1 400px;
-    }
+    .home { display:flex; align-items:center; justify-content:space-between; padding:80px 0; flex-wrap:wrap;}
+    .home__data { flex:1 1 500px; padding-right:20px;}
+    .home__title { font-size:3rem; margin-bottom:20px;}
+    .description { margin-bottom:20px; font-size:1.2rem;}
+    .home__buttons .button { display:inline-block; padding:12px 30px; background:#007bff; color:#fff; border-radius:5px; transition:background 0.3s;}
+    .home__buttons .button:hover { background:#0056b3;}
+    .home__img { flex:1 1 400px;}
 
     /* ---------- Features ---------- */
-    .feature, .feature2, .cta {
-      padding: 50px 0;
-    }
-    .feature__container, .feature2__container, .cta__container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .feature__data, .feature2__data, .cta__data {
-      flex: 1 1 400px;
-    }
-    .section__title {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
+    .feature, .feature2, .cta { padding:50px 0;}
+    .feature__container, .feature2__container, .cta__container { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+    .feature__data, .feature2__data, .cta__data { flex:1 1 400px;}
+    .section__title { font-size:2rem; margin-bottom:15px;}
+    .button { display:inline-block; padding:10px 25px; background:#007bff; color:#fff; border-radius:5px; transition:background 0.3s;}
+    .button:hover { background:#0056b3;}
 
     /* ---------- Footer ---------- */
-    .footer {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .footer__links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 5px;
-    }
-    .footer__links a {
-      color: #fff;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-    .footer__links a:hover {
-      color: #007bff;
-    }
+    .footer { background:#222; color:#fff; padding:25px 0; text-align:center;}
+    .footer__links { display:flex; justify-content:center; gap:15px; margin-top:5px; flex-wrap:wrap;}
+    .footer__links a { color:#fff; font-size:0.9rem; transition:color 0.3s;}
+    .footer__links a:hover { color:#007bff;}
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 900px) {
-      .home {
-        flex-direction: column;
-        text-align: center;
-      }
-      .home__data {
-        padding-right: 0;
-      }
-      .feature__container, .feature2__container, .cta__container {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .nav__links {
-        flex-direction: column;
-        display: none;
-        gap: 10px;
-      }
-      .nav__links.nav__links--active {
-        display: flex;
-      }
-      .nav__toggle {
-        display: block;
-      }
+    @media(max-width:900px){
+      .home { flex-direction:column; text-align:center;}
+      .home__data { padding-right:0; margin-bottom:30px;}
+      .feature__container, .feature2__container, .cta__container { flex-direction:column-reverse; text-align:center;}
+      .nav__links { flex-direction:column; display:none; gap:10px; background:#fff; position:absolute; top:70px; left:0; width:100%; padding:10px 0; box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+      .nav__links.nav__links--active { display:flex;}
+      .nav__toggle { display:block;}
+      .dropdown:hover .dropdown-menu { display:none;}
+      .dropdown .dropdown-menu { position:static; box-shadow:none;}
+    }
+    @media(max-width:500px){
+      .home__title { font-size:2rem;}
+      .description { font-size:1rem;}
     }
   </style>
 </head>
 <body>
 
-  <!----------------- Header / Nav + Hero ----------------->
+  <!-- Header / Nav + Hero -->
   <header class="header container">
     <nav class="nav" role="navigation">
       <div class="nav__header">
@@ -220,7 +84,6 @@
         </a>
         <button class="nav__toggle" aria-label="toggle navigation">&#9776;</button>
       </div>
-
       <ul class="nav__links">
         <li><a href="#home">Home</a></li>
         <li class="dropdown">
@@ -239,9 +102,7 @@
       <div class="home__container grid">
         <div class="home__data">
           <h1 class="home__title">Start Learning Smarter</h1>
-          <p class="description">
-            Octalearn equips you with powerful tools and engaging activities to enhance your learning experience.
-          </p>
+          <p class="description">Octalearn equips you with powerful tools and engaging activities to enhance your learning experience.</p>
           <div class="home__buttons">
             <a href="https://www.instagram.com/octa_learn/profilecard/" class="button">Join Us</a>
           </div>
@@ -251,15 +112,13 @@
     </div>
   </header>
 
-  <!----------------- Feature Sections ----------------->
+  <!-- Feature Sections -->
   <section class="feature padd-50 container">
     <div class="feature__container grid">
       <img src="im2.png" alt="" class="feature__img" />
       <div class="feature__data">
         <h2 class="section__title">Octa</h2>
-        <p class="description">
-          Have Octa, your accountability partner to hold you accountable ensure you stick to your schedule when you commit to a study session or goal.
-        </p>
+        <p class="description">Have Octa, your accountability partner to hold you accountable ensure you stick to your schedule when you commit to a study session or goal.</p>
       </div>
     </div>
   </section>
@@ -268,9 +127,7 @@
     <div class="feature2__container grid">
       <div class="feature2__data">
         <h2 class="section__title">Quiz & Scheduler</h2>
-        <p class="description">
-          Create a structured reading schedule fully integrated with quizes and flashcard, both of which you can also make yourself.
-        </p>
+        <p class="description">Create a structured reading schedule fully integrated with quizes and flashcard, both of which you can also make yourself.</p>
         <a href="" class="button">Download App</a>
       </div>
       <img src="im3.png" alt="" class="feature2__img" />
@@ -282,14 +139,12 @@
       <img src="im4.png" alt="" class="cta__img" />
       <div class="cta__data">
         <h2 class="section__title">AI Chatbot</h2>
-        <p class="cta__description description">
-          Chat with Octa to help you summarize and better understand your note, do your assignment or project and have a more fun learning experience.
-        </p>
+        <p class="cta__description description">Chat with Octa to help you summarize and better understand your note, do your assignment or project and have a more fun learning experience.</p>
       </div>
     </div>
   </section>
 
-  <!----------------- Footer ----------------->
+  <!-- Footer -->
   <footer class="footer container">
     <div class="footer__content">
       <p>© 2025 OCTALEARN</p>
@@ -300,24 +155,14 @@
     </div>
   </footer>
 
-  <!----------------- JS ----------------->
+  <!-- JS -->
   <script>
-    // Service Worker
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/serve.js")
-        .then(() => console.log("✅ Service Worker Registered"))
-        .catch(err => console.log("❌ Service Worker Failed:", err));
-    }
-
-    // Mobile menu toggle
     const toggle = document.querySelector(".nav__toggle");
     const navLinks = document.querySelector(".nav__links");
-
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("nav__links--active");
     });
   </script>
 
 </body>
-        </html>
-
+</html>
