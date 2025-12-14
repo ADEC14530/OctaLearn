@@ -2,105 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="c.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — OctaLearn</title>
-  <meta name="description" content="Privacy Policy for OctaLearn — how cookies, analytics and AI features are handled." />
+  <link rel="icon" type="image/x-icon" href="c.png" />
+
   <style>
     :root{
-      --brand-1:#0b63f6;
-      --brand-2:#3b8ef3;
-      --muted:#6b7280;
-      --bg:#fbfdff;
+      --bg:#eae7db;
       --card:#ffffff;
-      --radius:12px;
-      --max-width:900px;
-      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --brand:#0b63f6;
+      --radius:14px;
+      --max:900px;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff); color:#0b1220; line-height:1.6}
-    header{background:linear-gradient(135deg,var(--brand-1),var(--brand-2)); color:#fff; padding:48px 20px; text-align:center}
-    header h1{margin:0; font-size:clamp(1.4rem,3.6vw,2.2rem)}
-    main{max-width:var(--max-width); margin:28px auto; padding:20px}
-    .card{background:var(--card); padding:24px; border-radius:var(--radius); box-shadow:0 8px 24px rgba(11,99,246,0.06)}
-    h2{color:var(--brand-1)}
-    p{color:#162029}
-    ul{margin-left:20px}
-    footer{max-width:var(--max-width); margin:20px auto 60px; text-align:center; color:var(--muted); font-size:.95rem}
-    a{color:var(--brand-1)}
-    @media(max-width:560px){ main{padding:14px} .card{padding:18px} }
+
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    /* NAV */
+    nav{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      font-size:1.1rem;
+    }
+
+    .logo img{
+      width:36px;
+      height:36px;
+      object-fit:contain;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--brand);
+      font-weight:600;
+    }
+
+    /* HEADER */
+    header{
+      text-align:center;
+      padding:50px 20px 30px;
+    }
+
+    header h1{
+      font-size:clamp(1.6rem,4vw,2.4rem);
+      margin-bottom:8px;
+    }
+
+    header p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* MAIN */
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    h2{
+      color:var(--brand);
+      margin-top:28px;
+    }
+
+    h2:first-child{
+      margin-top:0;
+    }
+
+    h3{
+      margin-bottom:6px;
+    }
+
+    p{
+      margin-bottom:14px;
+    }
+
+    ul{
+      padding-left:20px;
+      margin-bottom:16px;
+    }
+
+    a{
+      color:var(--brand);
+    }
+
+    /* FOOTER */
+    footer{
+      text-align:center;
+      padding:40px 20px 20px;
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    footer a{
+      color:var(--brand);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* MOBILE */
+    @media(max-width:600px){
+      .card{
+        padding:20px;
+      }
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <img src="c.png" alt="OctaLearn Logo">
+      OctaLearn
+    </div>
+    <a href="index.html">← Back to Home</a>
+  </nav>
+
+  <!-- HEADER -->
   <header>
     <h1>Privacy Policy</h1>
     <p>Effective date: <strong>October 13, 2025</strong></p>
   </header>
 
+  <!-- CONTENT -->
   <main>
-    <article class="card" aria-labelledby="p1">
-      <h2 id="p1">Overview</h2>
-      <p>OctaLearn (octalearn.com.ng) is an open learning platform. This Privacy Policy explains what information we collect, how we use it, and your choices. Because OctaLearn is fully open (no user accounts), we do not require registration to use most features.</p>
+    <article class="card">
 
-      <h2 id="p2">Information We Collect</h2>
+      <h2>Overview</h2>
+      <p>
+        OctaLearn (octalearn.com.ng) is an open learning platform. This Privacy Policy explains
+        what information we collect, how we use it, and the choices available to you.
+      </p>
+
+      <h2>Information We Collect</h2>
+
       <h3>1. Automatically Collected Data</h3>
-      <p>We automatically collect certain information when you visit the site, including:</p>
       <ul>
-        <li>Device and browser information (user agent, screen size, OS)</li>
+        <li>Device and browser information</li>
         <li>IP address (for analytics and security)</li>
-        <li>Usage data (pages visited, time on page, clicks) via analytics tools</li>
+        <li>Pages visited and interaction data</li>
       </ul>
 
-      <h3>2. Cookies &amp; Local Storage</h3>
-      <p>OctaLearn uses cookies and local storage for:</p>
+      <h3>2. Cookies & Local Storage</h3>
       <ul>
-        <li><strong>Essential cookies:</strong> enable basic site functions and accessibility.</li>
-        <li><strong>Functional cookies:</strong> store preferences and settings (e.g., theme, language).</li>
-        <li><strong>AI personalization cookies:</strong> power client-side AI features like summary generation and local personalization. These may store temporary tokens or summary data locally to avoid server-side profiling.</li>
-        <li><strong>Analytics cookies:</strong> aggregate usage data to help us improve the site.</li>
+        <li><strong>Essential cookies</strong> for site functionality</li>
+        <li><strong>Preference cookies</strong> (theme, settings)</li>
+        <li><strong>AI personalization storage</strong> for summaries & tools</li>
+        <li><strong>Analytics cookies</strong> to improve performance</li>
       </ul>
-      <p>You may manage cookie preferences from the cookie banner; blocking cookies may disable AI summary features.</p>
 
-      <h2 id="p3">How We Use Data</h2>
+      <h2>How We Use Data</h2>
       <ul>
-        <li>To operate and maintain the Service and improve content quality.</li>
-        <li>To enable AI features (client-side summaries) and store temporary local data needed to provide those features.</li>
-        <li>To analyze site usage and trends to enhance performance and user experience.</li>
-        <li>To protect the site from abuse and to detect security issues.</li>
+        <li>Operate and improve OctaLearn</li>
+        <li>Enable AI-powered learning tools</li>
+        <li>Understand user behavior and trends</li>
+        <li>Maintain platform security</li>
       </ul>
 
-      <h2 id="p4">Data Sharing &amp; Third Parties</h2>
-      <p>We do not sell personal data. We may share aggregated, non-identifying analytics with trusted third-party service providers (e.g., analytics platforms or CDN providers). When we use third parties, we require that they provide appropriate safeguards.</p>
+      <h2>Data Sharing</h2>
+      <p>
+        We do not sell personal data. We may share anonymized analytics with trusted
+        third-party services strictly for improvement and security purposes.
+      </p>
 
-      <h2 id="p5">Retention</h2>
-      <p>We retain usage logs and aggregated analytics for as long as needed to provide the Service and comply with legal obligations. Cookies and local storage items used for AI summaries are stored on the user's device and can be cleared by the user at any time.</p>
+      <h2>Data Retention</h2>
+      <p>
+        Cookies and AI-related data are stored locally on your device and can be cleared
+        anytime. Server-side logs are retained only as long as necessary.
+      </p>
 
-      <h2 id="p6">International Transfers</h2>
-      <p>OctaLearn is available to a global audience. Data (such as analytics logs) may be processed in countries other than your residence. Where required by law, we implement appropriate safeguards for international data transfers.</p>
+      <h2>Children’s Privacy</h2>
+      <p>
+        OctaLearn is not intended for children under 13. We do not knowingly collect
+        personal data from minors.
+      </p>
 
-      <h2 id="p7">Children</h2>
-      <p>OctaLearn is not intended for children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us and we will delete it.</p>
-
-      <h2 id="p8">Your Rights &amp; Choices</h2>
+      <h2>Your Rights</h2>
       <ul>
-        <li><strong>Cookies:</strong> You can accept or decline cookies via the cookie banner or browser settings.</li>
-        <li><strong>Access &amp; deletion:</strong> Because we do not create accounts, we generally cannot identify an individual user across devices. If you believe we hold personal data about you in server logs, contact us and we will assess reasonable requests.</li>
-        <li><strong>Analytics opt-out:</strong> You may use browser extensions or privacy settings to opt out of certain analytics tracking.</li>
+        <li>Accept or decline cookies</li>
+        <li>Clear stored data anytime via browser settings</li>
+        <li>Contact us for privacy-related concerns</li>
       </ul>
 
-      <h2 id="p9">Security</h2>
-      <p>We implement reasonable technical and organizational measures to protect data. However, no system is completely secure; we cannot guarantee absolute security of information transmitted to or from our Service.</p>
+      <h2>Security</h2>
+      <p>
+        We implement reasonable safeguards, but no system is 100% secure.
+      </p>
 
-      <h2 id="p10">Updates to this Policy</h2>
-      <p>We may update this Privacy Policy occasionally. We will post the revised policy on this page with an updated "Effective date".</p>
+      <h2>Policy Updates</h2>
+      <p>
+        This Privacy Policy may be updated periodically. Changes will be reflected on this page.
+      </p>
 
-      <h2 id="p11">Contact</h2>
-      <p>If you have questions or requests related to privacy, email us at <a href="mailto:adec14530@gmaio.com">adec14530@gmail.com</a>.</p>
+      <h2>Contact</h2>
+      <p>
+        For privacy questions, email:
+        <a href="mailto:adec14530@gmail.com">adec14530@gmail.com</a>
+      </p>
+
     </article>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 OctaLearn • <a href="term.html">Terms &amp; Conditions</a></p>
+    © 2025 OctaLearn • <a href="term.html">Terms & Conditions</a>
   </footer>
+
 </body>
 </html>
