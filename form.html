@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OctaLearn Tools – Learn, Focus & Grow</title>
+  <link rel="icon" href="c-removebg-preview.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6816680903251909"
+     crossorigin="anonymous"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#eae7db;
+      color:#222;
+      line-height:1.8;
+    }
+
+    a{color:#007bff;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    /* ===== NAV ===== */
+    header{
+      background:#eae7db;
+      border-bottom:1px solid rgba(0,0,0,.1);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:bold;
+      font-size:1.4rem;
+    }
+
+    .logo img{width:36px}
+
+    .nav-links{
+      display:flex;
+      gap:20px;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:1.8rem;
+      background:none;
+      border:none;
+    }
+
+    /* ===== HERO HEADER ===== */
+    .tools-hero{
+      padding:60px 0 30px;
+      text-align:center;
+    }
+
+    .tools-hero h1{
+      font-size:2.6rem;
+      margin-bottom:10px;
+    }
+
+    .tools-hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:1.1rem;
+      color:#444;
+    }
+
+    /* ===== TOOL SECTIONS ===== */
+    section{
+      background:#fff;
+      padding:40px;
+      margin:40px 0;
+      border-radius:10px;
+    }
+
+    h2{color:#007bff; margin-bottom:15px;}
+    p{margin-bottom:12px;}
+    ul{margin-left:20px; margin-bottom:12px;}
+    .btn{
+      display:inline-block;
+      background:#007bff;
+      color:white;
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      margin-top:10px;
+      transition:0.3s;
+    }
+    .btn:hover{background:#0056b3;}
+
+    footer{
+      text-align:center;
+      padding:20px 0;
+      border-top:1px solid rgba(0,0,0,.1);
+      font-size:.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:700px){
+      .nav-links{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:#eae7db;
+        flex-direction:column;
+        padding:20px 0;
+        display:none;
+      }
+
+      .nav-links.active{display:flex}
+      .menu-btn{display:block}
+      section{padding:25px}
+    }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="c-removebg-preview.png" alt="OctaLearn logo">
+      OCTALEARN
+    </div>
+
+    <button class="menu-btn">☰</button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</header>
+
+<section class="tools-hero container">
+  <h1>Explore OctaLearn Tools</h1>
+  <p>Interactive productivity and learning tools designed to help students learn smarter, improve focus, and enhance skills.</p>
+</section>
+
+<div class="container">
+  <!-- Typing Game -->
+  <section>
+    <h2>Typing Game</h2>
+    <p>Boost your typing speed and accuracy with this interactive game. Track your progress and challenge yourself daily!</p>
+    <p><strong>How to use:</strong></p>
+    <ul>
+      <li>Read the sentence displayed in the box.</li>
+      <li>Type it accurately as fast as you can.</li>
+      <li>Check your WPM (Words Per Minute) and accuracy at the end.</li>
+    </ul>
+    <a href="G.html" class="btn">Go to Typing Game</a>
+  </section>
+
+  <!-- Image to PDF -->
+  <section>
+    <h2>Image to PDF Converter</h2>
+    <p>Convert your images into PDF files quickly and easily.</p>
+    <p><strong>How to use:</strong></p>
+    <ul>
+      <li>Upload one or more images (JPEG, PNG, etc.).</li>
+      <li>Click "Convert" to generate a PDF file.</li>
+      <li>Download the PDF to your device.</li>
+    </ul>
+    <a href="converter.html" class="btn">Go to Image to PDF</a>
+  </section>
+
+  <!-- Pomodoro Timer -->
+  <section>
+    <h2>Pomodoro Timer</h2>
+    <p>Increase focus and productivity using the Pomodoro technique (25-minute work sessions followed by short breaks).</p>
+    <p><strong>How to use:</strong></p>
+    <ul>
+      <li>Set your work session duration (default: 25 minutes).</li>
+      <li>Click "Start" and focus on your task.</li>
+      <li>Take short breaks as recommended.</li>
+    </ul>
+    <a href="pomodoro.html" class="btn">Go to Pomodoro Timer</a>
+  </section>
+
+  <!-- CV Maker -->
+  <section>
+    <h2>CV Maker</h2>
+    <p>Create professional resumes and CVs quickly with OctaLearn’s easy-to-use CV Maker tool.</p>
+    <p><strong>How to use:</strong></p>
+    <ul>
+      <li>Enter your personal information, education, and work experience.</li>
+      <li>Choose from a variety of professional CV templates.</li>
+      <li>Preview your CV and make edits if necessary.</li>
+      <li>Download the final CV as a PDF ready to send to employers.</li>
+    </ul>
+    <a href="cv.html" class="btn">Go to CV Maker</a>
+  </section>
+
+  <!-- Study Tips -->
+  <section>
+    <h2>Study Tips & Productivity Tools</h2>
+    <p>Maximize your learning efficiency by combining OctaLearn tools with smart study habits.</p>
+    <ul>
+      <li>Use the Pomodoro timer to structure study sessions.</li>
+      <li>Track your typing progress with the Typing Game.</li>
+      <li>Organize resources and convert images to PDFs for easy reference.</li>
+      <li>Take regular breaks and review notes consistently.</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  © 2025 OctaLearn • <a href="term.html">Terms & Conditions</a> | <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+<script>
+  const btn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".nav-links");
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
