@@ -244,5 +244,14 @@
     © 2025 OctaLearn • <a href="term.html">Terms & Conditions</a>
   </footer>
 
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serve.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.log("❌ Service Worker Failed:", err));
+  }
+  </script>
+  
 </body>
 </html>
