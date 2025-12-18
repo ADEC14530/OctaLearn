@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RayLearn — How It Works</title>
+  <meta name="description" content="RayLearn is an offline-first, solar-powered learning platform designed for students without stable electricity or internet." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eae7db;
+      --primary: #2f5d50;
+      --secondary: #5c7c6d;
+      --dark: #1f2f2a;
+      --card: #ffffff;
+      --accent: #f4a261;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      color: #444;
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .how-it-works h2,
+    .impact h2,
+    .partners h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .impact {
+      background: rgba(255,255,255,0.4);
+      border-radius: 24px;
+    }
+
+    .impact .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .stat p {
+      color: #444;
+    }
+
+    .partners {
+      text-align: center;
+    }
+
+    .partners p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    .partners a {
+      padding: 1rem 2.5rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .partners a:hover {
+      background: #e76f51;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+    }
+
+   
+    .team h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid var(--bg);
+}
+
+.team-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+    
+
+  </style>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6816680903251909"
+     crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+  <header>
+    <h1>RayLearn</h1>
+    <p>
+      RayLearn is an offline-first, solar-powered learning platform that gives students
+      light, power, and education — even without electricity or internet.
+    </p>
+    <div class="cta">
+      <a href="#partners">Partner With Us</a>
+    </div>
+  </header>
+
+  <section class="how-it-works">
+    <h2>How RayLearn Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Power Independence</h3>
+        <p>
+          RayLearn is powered by solar energy with battery backup, ensuring students can
+          study anytime — day or night — without relying on unstable electricity.
+        </p>
+      </div>
+      <div class="card">
+        <h3>2. Offline Learning</h3>
+        <p>
+          A built-in tablet comes preloaded with curriculum-aligned lessons, videos,
+          quizzes, and reading materials that work fully offline.
+        </p>
+      </div>
+      <div class="card">
+        <h3>3. Safe Study Light</h3>
+        <p>
+          An integrated LED reading lamp replaces candles and kerosene lamps, improving
+          safety and extending study hours.
+        </p>
+      </div>
+      <div class="card">
+        <h3>4. Device Charging</h3>
+        <p>
+          USB ports allow students and families to charge phones or small devices, reducing
+          the cost and time spent searching for power.
+        </p>
+      </div>
+      <div class="card">
+  <h3>5. Exam-Focused Learning</h3>
+  <p>
+    RayLearn’s educational content is structured around key school subjects and exams,
+    helping students revise important topics, practice questions, and improve academic
+    performance even without internet access.
+  </p>
+</div>
+<div class="card">
+  <h3>6. Smart Learning Design</h3>
+  <p>
+    RayLearn is designed to support focused and distraction-free learning. The system
+    organizes lessons, practice questions, and revision materials in a simple interface
+    that helps students stay on track, learn at their own pace, and build consistent
+    study habits.
+  </p>
+</div>
+
+    </div>
+  </section>
+
+  <section class="prototype">
+    <h2 style="text-align:center;color:var(--primary);margin-bottom:1.5rem;">RayLearn Prototype Demo</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 2rem;color:#444;">
+      Watch how the RayLearn prototype works in real-life conditions — from powering on with solar energy
+      to offline learning and safe nighttime study.
+    </p>
+    <div style="max-width:800px;margin:auto;">
+  <div style="position:relative;padding-top:56.25%;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.1);background:#000;">
+    
+    <video
+      controls
+      style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"
+    >
+      <!-- Replace raylearn-demo.mp4 with your actual video file -->
+      <source src="raylearn-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="impact">
+    <h2>Our Impact</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>3×</h3>
+        <p>Increase in nightly study time</p>
+      </div>
+      <div class="stat">
+        <h3>90%</h3>
+        <p>Daily usage among pilot students</p>
+      </div>
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Willingness to continue using RayLearn</p>
+      </div>
+    </div>
+  </section>
+<!--
+<section class="team">
+  <h2>Meet the Team</h2>
+
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="team1.jpg" alt="Team Member">
+      <h3>Team Member Name</h3>
+      <p>Project Lead & Strategy</p>
+    </div>
+
+    <div class="team-card">
+      <img src="team2.jpg" alt="Team Member">
+      <h3>Team Member Name</h3>
+      <p>Engineering & Hardware Design</p>
+    </div>
+
+    <div class="team-card">
+      <img src="team3.jpg" alt="Team Member">
+      <h3>Team Member Name</h3>
+      <p>Content & Curriculum Development</p>
+    </div>
+
+    <div class="team-card">
+      <img src="team4.jpg" alt="Team Member">
+      <h3>Team Member Name</h3>
+      <p>Operations & Field Testing</p>
+    </div>
+
+    <div class="team-card">
+      <img src="team5.jpg" alt="Team Member">
+      <h3>Team Member Name</h3>
+      <p>Partnerships & Community Outreach</p>
+    </div>
+
+  </div>
+</section>
+  --!>
+
+  <section class="partners" id="partners">
+    <h2>Partner With RayLearn</h2>
+    <p>
+      We are seeking investors, NGOs, schools, and mission-driven partners to help us
+      scale RayLearn and bring reliable education to underserved communities. Email us with your
+      partnership request and we will get back to you soon.
+    </p>
+    <a href="mailto:adec14530@gmail.com">Become a Partner</a>
+  </section>
+
+  <footer>
+    © 2025 RayLearn. Education that works even when infrastructure fails.
+  </footer>
+
+</body>
+</html>
