@@ -389,6 +389,15 @@
     © 2025 RayLearn. Education that works even when infrastructure fails.
   </footer>
 
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serve.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.log("❌ Service Worker Failed:", err));
+  }
+  </script>
+
 </body>
 </html>
+
 
