@@ -8,6 +8,13 @@ const urlsToCache = [
   "/G.html",
   "/upload.html",
   "/fall.html",
+  "/blog.html",
+  "/cv.html",
+  "/partners.html",
+  "/pomodoro.html",
+  "/privacy.html",
+  "/terms.html",
+  "/tools.html",
   "/O.css",
   "/O.js"
 ];
